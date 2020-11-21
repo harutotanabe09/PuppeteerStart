@@ -42,3 +42,11 @@ puppeteer と puppeteer coreは別物っぽい
 
 メモ：
 https://kcf-developers.hatenablog.jp/entry/2018/10/11/114516
+
+## Serverless Application Framework Start
+
+```sh
+sls create --template aws-nodejs --path ./src/models/lambda
+mv src/models/lambda/serverless.yml ./
+mv src/models/lambda/.gitignore ./
+```
