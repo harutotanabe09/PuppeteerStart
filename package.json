@@ -17,17 +17,13 @@
           "pre-commit": "lint-staged"
         }
       },
-      "lint-staged": {
-        "linters": {
-          "*.js": [
+    "lint-staged": {
+        "*.{js}": [
+            "prettier --write",
             "eslint --fix",
             "git add"
-          ]
+            ]        
         },
-        "ignore": [
-          "dist/**/*"
-        ]
-    },
     "dependencies": {
         "puppeteer": "^5.5.0"
     },
