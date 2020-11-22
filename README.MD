@@ -72,4 +72,3 @@ huskyとlint-stagedが必要
 https://github.com/okonet/lint-staged#examples
 
 pacakage.jsonにhuskyとlint-stagedを設定
-
