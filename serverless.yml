@@ -57,9 +57,12 @@ package:
     - .git/**
     - scrapying/**
     - node_modules/**
-    - README.md
+    - README.MD
     - .gitignore
     - package-lock.json
+    - package.json
+    - package-lock.json
+    - yarn.lock
     # exclude-me-dir/**
 
 functions:
