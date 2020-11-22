@@ -18,11 +18,7 @@
         }
     },
     "lint-staged": {
-        "*.{js}": [
-            "prettier --write",
-            "eslint --fix",
-            "git add"
-        ]
+        "*.{js}": "eslint"
     },
     "dependencies": {
         "puppeteer": "^5.5.0"
