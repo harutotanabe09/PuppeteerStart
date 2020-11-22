@@ -50,3 +50,24 @@ sls create --template aws-nodejs --path ./src/models/lambda
 mv src/models/lambda/serverless.yml ./
 mv src/models/lambda/.gitignore ./
 ```
+
+## EsLint を考える
+
+eslintファイル作成。対話式
+
+```sh
+eslint init
+```
+eslintから自動整形はprettierが必要
+
+```sh
+eslint . --quiet --fix
+```
+
+## EsLint でPrecommit前に行う
+
+huskyとlint-stagedが必要
+https://github.com/okonet/lint-staged#examples
+
+pacakage.jsonにhuskyとlint-stagedを設定
+
