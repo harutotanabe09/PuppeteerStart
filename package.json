@@ -14,16 +14,16 @@
     },
     "husky": {
         "hooks": {
-          "pre-commit": "lint-staged"
+            "pre-commit": "lint-staged"
         }
-      },
+    },
     "lint-staged": {
         "*.{js}": [
             "prettier --write",
             "eslint --fix",
             "git add"
-            ]        
-        },
+        ]
+    },
     "dependencies": {
         "puppeteer": "^5.5.0"
     },

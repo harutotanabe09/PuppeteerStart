@@ -14,13 +14,6 @@ const puppeteer = require('puppeteer');
     await page.click('input[type="submit"]')
     //スクリーンショット
     await page.screenshot({ path: 'screenshot/sample1.png' })
-
-
-
-
-
-
-    
     await browser.close()
 })()
 
