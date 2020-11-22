@@ -64,6 +64,8 @@ eslintから自動整形はprettierが必要
 eslint . --quiet --fix
 ```
 
+https://qiita.com/mysticatea/items/f523dab04a25f617c87d
+
 ## EsLint でPrecommit前に行う
 
 huskyとlint-stagedが必要
