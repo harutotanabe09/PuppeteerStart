@@ -39,7 +39,7 @@ yarn init -y
 ```
 
 puppeteer と puppeteer coreは別物っぽい
-
+his
 メモ：
 https://kcf-developers.hatenablog.jp/entry/2018/10/11/114516
 
@@ -49,6 +49,10 @@ https://kcf-developers.hatenablog.jp/entry/2018/10/11/114516
 sls create --template aws-nodejs --path ./src/models/lambda
 mv src/models/lambda/serverless.yml ./
 mv src/models/lambda/.gitignore ./
+
+npx sls deploy 
+npx sls config credentials --provider aws --key xxx --secret xxx
+
 ```
 
 ## EsLint を考える
