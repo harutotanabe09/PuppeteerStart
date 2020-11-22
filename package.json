@@ -18,7 +18,7 @@
         }
     },
     "lint-staged": {
-        "*.{js}": "eslint"
+        "*.js": "eslint --cache --fix"
     },
     "dependencies": {
         "puppeteer": "^5.5.0"
