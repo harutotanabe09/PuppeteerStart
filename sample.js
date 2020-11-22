@@ -15,8 +15,12 @@ const puppeteer = require('puppeteer');
     //スクリーンショット
     await page.screenshot({ path: 'screenshot/sample1.png' })
 
-    const pa;
 
+
+
+
+
+    
     await browser.close()
 })()
 
