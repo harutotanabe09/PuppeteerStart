@@ -1,15 +1,16 @@
-## Install
-
-
 ## First Step 
 
 Create package.json
+
+```sh
+yarn init
+```
 
 ## Yarn install 
 
 ```sh
 yarn add puppeteer
-yarn add --dev prettier eslint eslint-plugin-prettier eslint-config-prettier babel-eslint serverless
+yarn add --dev prettier eslint eslint-plugin-prettier eslint-config-prettier babel-eslint serverless serverless-offline
 ```
 
 ## Guide
@@ -32,14 +33,8 @@ Result Get PDF
 
 ## Memo
 
-yarnの初期化。
-
-```sh
-yarn init -y
-```
-
 puppeteer と puppeteer coreは別物っぽい
-his
+
 メモ：
 https://kcf-developers.hatenablog.jp/entry/2018/10/11/114516
 
@@ -52,8 +47,9 @@ mv src/models/lambda/.gitignore ./
 
 npx sls deploy 
 npx sls config credentials --provider aws --key xxx --secret xxx
-
 ```
+
+Serverlessは、除外設定必要。nodemodulesや.gitを無視する。
 
 ## EsLint を考える
 
@@ -66,9 +62,10 @@ eslintから自動整形はprettierが必要
 
 ```sh
 eslint . --quiet --fix
+npx eslint . --quiet --fix
 ```
 
-https://qiita.com/mysticatea/items/f523dab04a25f617c87d
+https://qiita.com/myyasticatea/items/f523dab04a25f617c87d
 
 ## EsLint でPrecommit前に行う
 
@@ -76,3 +73,13 @@ huskyとlint-stagedが必要
 https://github.com/okonet/lint-staged#examples
 
 pacakage.jsonにhuskyとlint-stagedを設定
+
+## Serveless lamdba Puppetter
+
+serverless-offline
+- デプロイ前の確認。ドライランする前に実行
+- yarn add --dev serverless-offline
+- serverless.ymlのpluginで実行可能
+-  npx sls offline で実行可能
+
+https://github.com/serverless/examples/blob/master/aws-node-puppeteer/serverless.yml
