@@ -3,7 +3,9 @@
     "version": "1.0.0",
     "description": "Puppeteer Project",
     "devDependencies": {
+        "@serverless-chrome/lambda": "^1.0.0-57.2",
         "babel-eslint": "^10.1.0",
+        "chrome-launcher": "^0.13.4",
         "eslint": "^7.14.0",
         "eslint-config-prettier": "^6.15.0",
         "eslint-plugin-prettier": "^3.1.4",
@@ -11,7 +13,9 @@
         "lint-staged": "^10.5.1",
         "prettier": "^2.2.0",
         "serverless": "^2.12.0",
-        "serverless-offline": "^6.8.0"
+        "serverless-offline": "^6.8.0",
+        "serverless-plugin-chrome": "^1.0.0-55.3",
+        "superagent": "^6.1.0"
     },
     "husky": {
         "hooks": {

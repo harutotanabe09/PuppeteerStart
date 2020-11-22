@@ -83,3 +83,16 @@ serverless-offline
 -  npx sls offline で実行可能
 
 https://github.com/serverless/examples/blob/master/aws-node-puppeteer/serverless.yml
+
+```sh
+yarn add --dev @serverless-chrome/lambda
+```
+
+## How to Start
+
+```sh
+curl -X GET \
+  'http://localhost:3000?url={{URL}}' \
+
+curl -X GET 'http://localhost:3000?url=https://example.com'
+```
