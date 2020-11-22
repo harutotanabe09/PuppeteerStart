@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-(async ()    => {
+(async () => {
     const browser = await puppeteer.launch({
         headless: false,  // ブラウザが動く様子を確認する
         slowMo: 300  // 動作確認しやすいようにpuppeteerの操作を遅延させる
@@ -14,6 +14,8 @@ const puppeteer = require('puppeteer');
     await page.click('input[type="submit"]')
     //スクリーンショット
     await page.screenshot({ path: 'screenshot/sample1.png' })
+
+    const pa;
 
     await browser.close()
 })()
