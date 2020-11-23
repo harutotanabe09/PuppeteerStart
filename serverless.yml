@@ -3,7 +3,6 @@ app: lamda-app-test
 plugins:
   - serverless-offline
   - serverless-plugin-chrome
-
 provider:
   name: aws
   runtime: nodejs12.x
@@ -31,3 +30,14 @@ functions:
           method: get
     tags:
       foo: bar
+
+resources:
+  Resources:
+    Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: lambda-layers-deploy-2020-11-23-haruto
+##
+##custom:
+##  serverless-layers:
+##    layersDeploymentBucket: lambda-layers-deploy-2020-11-23-haruto
