@@ -96,3 +96,18 @@ curl -X GET \
 
 curl -X GET 'http://localhost:3000?url=https://example.com'
 ```
+
+## エラーとの戦い
+
+- npx sls deployだとグローバル実行でなくローカル実行となり、なにかしたらのエラーになる
+
+```sh
+  Error: ENOENT: no such file or directory, open '.build/.serverless/nodemodules.zip'
+```
+
+- node_modules/puppeteer/.local-chromium/**を除外しないと容量エラーになる
+  layers exclude serverlessがない
+
+```sh
+  An error occurred: NodemodulesLambdaLayer - Unzipped size must be smaller than 262144000 bytes
+```
