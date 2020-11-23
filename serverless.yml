@@ -10,22 +10,24 @@ provider:
   region: ap-northeast-1
   stage: dev
 
+package:
+    include:
+        - src/**/*.js
+    exclude:
+      - .git/**
+      - node_modules/**
+
 functions:
   app:
     handler: src/models/lambda/handler.app
-    # 個別のファイル設定
-    individually: true
-    package:
-      include:
-        - 'src/**'
-      exclude:
-        - '**'
-        - .git/**
-    memorySize: 1536
+    description: My function
+    memorySize: 1024
     timeout: 60
+    environment:
+      variable2: value2
     events:
       - http:
           path: /
           method: get
-    environment:
-      variable2: value2
+    tags:
+      foo: bar
