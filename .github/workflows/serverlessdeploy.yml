@@ -18,7 +18,6 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-#       - run: npm ci
         - run: npm config set puppeteer_skip_chromium_download true && npm install --production 
     - name: sls deploy
       uses: serverless/github-action@master
