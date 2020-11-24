@@ -5,7 +5,10 @@ provider:
   runtime: nodejs12.x
   region: ap-northeast-1
   stage: dev
-
+# sls deploy dont work
+# plugins:
+#   - serverless-offline
+#   - serverless-plugin-chrome
 package:
     individually: true
     include:

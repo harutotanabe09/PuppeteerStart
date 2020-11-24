@@ -94,7 +94,7 @@ yarn add --dev @serverless-chrome/lambda
 curl -X GET \
   'http://localhost:3000?url={{URL}}' \
 
-curl -X GET 'http://localhost:3000?url=https://example.com'
+curl -X GET 'http://localhost:3000/dev?url=https://example.com'
 ```
 
 ## エラーとの戦い
