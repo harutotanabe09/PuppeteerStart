@@ -1,19 +1,25 @@
-const puppeteer = require('puppeteer');
-const { getChrome } = require('./chrome-script');
+const chromium = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
-module.exports.app = async (event) => {
-    const { url } = event.queryStringParameters;
-    const chrome = await getChrome();
-    const browser = await puppeteer.connect({
-        browserWSEndpoint: chrome.endpoint,
-    });
-    const page = await browser.newPage();
-    await page.goto(url, { waitUntil: 'networkidle0' });
-    const content = await page.evaluate(() => document.body.innerHTML);
-    return {
-        statusCode: 200,
-        body: JSON.stringify({
-            content,
-        }),
-    };
+exports.handler = async (event, context) => {
+    let result = null;
+    let browser = null;
+    try {
+        browser = await puppeteer.launch({
+            args: chromium.args,
+            defaultViewport: chromium.defaultViewport,
+            executablePath: await chromium.executablePath,
+            headless: chromium.headless,
+        });
+        let page = await browser.newPage();
+        await page.goto(event.url || 'https://yahoo.co.jp/');
+        result = await page.title();
+    } catch (error) {
+        return context.fail(error);
+    } finally {
+        if (browser !== null) {
+            await browser.close();
+        }
+    }
+    return context.succeed(result);
 };
