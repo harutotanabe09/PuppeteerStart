@@ -18,9 +18,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-      env:
-        NODE_ENV: production
-    - run: npm ci
+#       - run: npm ci
+        - run: npm config set puppeteer_skip_chromium_download true && npm install --production 
     - name: sls deploy
       uses: serverless/github-action@master
       with:
@@ -28,4 +27,3 @@ jobs:
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
