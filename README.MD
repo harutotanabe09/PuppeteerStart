@@ -107,6 +107,8 @@ curl -X GET 'http://localhost:3000/dev?url=https://example.com'
 
 - node_modules/puppeteer/.local-chromium/**を除外しないと容量エラーになる
   layers exclude serverlessがない
+  https://www.wakuwakubank.com/posts/620-javascript-puppeteer/
+  回避策：PUPPETEER_SKIP_CHROMIUM_DOWNLOAD or puppeteer-core
 
 ```sh
   An error occurred: NodemodulesLambdaLayer - Unzipped size must be smaller than 262144000 bytes
