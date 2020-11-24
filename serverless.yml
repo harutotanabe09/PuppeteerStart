@@ -46,3 +46,6 @@ layers:
     path: node_modules
     name: node_modules-layerName
     description: Description of what the lambda layer does
+    compatibleRuntimes:
+      - nodejs12.x
+    retain: true
