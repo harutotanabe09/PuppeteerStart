@@ -7,10 +7,6 @@ provider:
   stage: dev
 plugins:
   - serverless-layers
-# sls deploy dont work
-# plugins:
-#   - serverless-offline
-#   - serverless-plugin-chrome
 package:
     individually: true
     include:
@@ -44,7 +40,7 @@ resources:
         BucketName: lambda-layers-deploy-2020-11-23-haruto
 custom:
   serverless-layers:
-    functions: # optional
+    functions:
       - app
     dependenciesPath: ./package.json        
 
