@@ -42,13 +42,4 @@ custom:
   serverless-layers:
     functions:
       - app
-    dependenciesPath: ./package.json        
-
-layers:
-  nodemodules:
-    path: node_modules
-    name: node_modules-layerName
-    description: Description of what the lambda layer does
-    compatibleRuntimes:
-      - nodejs12.x
-    retain: true
+    layersDeploymentBucket: lambda-layers-deploy-2020-11-23-haruto
