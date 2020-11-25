@@ -1,4 +1,5 @@
 service: lambda
+frameworkVersion: '2'
 app: lamda-app-test
 provider:
   name: aws

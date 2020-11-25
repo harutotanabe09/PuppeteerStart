@@ -118,3 +118,5 @@ curl -X GET 'http://localhost:3000/dev?url=https://example.com'
 
 ライブラリをレイヤーに含めるには、ランタイムでサポートされているいずれかのフォルダにそれらを配置します。
 Node.js – nodejs/node_modules、nodejs/node8/node_modules (NODE_PATH)
+
+https://dev.classmethod.jp/articles/serverless-framework-node-modules-to-lambda-layers/
