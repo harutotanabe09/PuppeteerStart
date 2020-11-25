@@ -30,8 +30,6 @@ functions:
           method: get
     tags:
       foo: bar
-    layers:
-      - { Ref: NodemodulesLambdaLayer }
 resources:
   Resources:
     Bucket:
