@@ -1,71 +1,84 @@
-## First Step 
+# Name
 
-Create package.json
+SLP
+( Serverless and Lamdba and Puppeteer and Github Actions ) 
+
+# DEMO
+
+実行するとこちらが出力される
+
+```sh
+"クラスメソッド発「やってみた」系技術メディア | Developers.IO"
+```
+ 
+# Features
+ 
+SLPでサーバーレスでWebクローリング実行
+ 
+# Requirement
+
+* Node
+* Yarn
+* Serverless Framework
+ 
+# Installation
+
+package.jsonよりライブラリのダウンロード。
+ 
+```bash
+yarn install
+```
+ 
+# Usage
+ 
+ローカル環境の実行
+ 
+```bash
+sls invoke -f app
+```
+
+本番環境の実行は、APIGatewayで確認可能
+  
+# Note
+ 
+### Yarn init Package 
 
 ```sh
 yarn init
 ```
 
-## Yarn install 
+### Yarn install 
 
 ```sh
+// ローカル環境へインストール
 yarn add puppeteer
-yarn add --dev prettier eslint eslint-plugin-prettier eslint-config-prettier babel-eslint serverless serverless-offline
+// DEV環境へインストール
+yarn add --dev prettier eslint eslint-plugin-prettier eslint-config-prettier babel-eslint serverless @serverless-chrome/lambda
 ```
 
-## Guide
-
-https://github.com/puppeteer/puppeteer
-
-## Start
+### How to install 
 
 ```sh
 node example.js
-```
-
-Result Get Png
-
-```sh
 node hn.js
 ```
 
-Result Get PDF
+### MEMO1
 
-## Memo
+- puppeteer と puppeteer coreは別物で、puppeteerはAllInOneのイメージ
 
-puppeteer と puppeteer coreは別物っぽい
+### MEMO2
 
-メモ：
-https://kcf-developers.hatenablog.jp/entry/2018/10/11/114516
-
-## Serverless Application Framework Start
-
-```sh
-sls create --template aws-nodejs --path ./src/models/lambda
-mv src/models/lambda/serverless.yml ./
-mv src/models/lambda/.gitignore ./
-
-npx sls deploy 
-npx sls config credentials --provider aws --key xxx --secret xxx
-```
-
-Serverlessは、除外設定必要。nodemodulesや.gitを無視する。
-
-## EsLint を考える
-
-eslintファイル作成。対話式
+- eslintから自動整形はprettierが必要
 
 ```sh
 eslint init
 ```
-eslintから自動整形はprettierが必要
 
 ```sh
 eslint . --quiet --fix
 npx eslint . --quiet --fix
 ```
-
-https://qiita.com/myyasticatea/items/f523dab04a25f617c87d
 
 ## EsLint でPrecommit前に行う
 
@@ -84,11 +97,6 @@ serverless-offline
 
 https://github.com/serverless/examples/blob/master/aws-node-puppeteer/serverless.yml
 
-```sh
-yarn add --dev @serverless-chrome/lambda
-```
-
-## How to Start
 
 ```sh
 curl -X GET \
